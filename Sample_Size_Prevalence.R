@@ -1,5 +1,6 @@
 library(ribge)
 library(samplesize4surveys)
+library(SampleSize4ClinicalTrials)
 library(clipr)
 #Baixa população estimada para 2021 de cada município
 pop2021 <- populacao_municipios(2021)
@@ -29,3 +30,8 @@ data_pop_prev <- data_pop_prev %>%
 data_pop_prev
 #Salva o dataset para a posteridade
 writexl::write_xlsx(data_pop_prev, "/Users/987352344/Documents/sample_size_uf.xlsx")
+
+
+ssc_propcomp(design = 2L, ratio = 1, alpha = 0.05, power = 0.9, p1 = 0.07, p2 = 0.14, delta = 0.05)
+
+
